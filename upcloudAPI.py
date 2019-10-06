@@ -1,6 +1,5 @@
 import http.client
 import UI
-import json
 from servers import Serverlist
 from base64 import b64encode
 from getpass import getpass
