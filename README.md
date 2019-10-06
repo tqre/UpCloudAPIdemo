@@ -9,4 +9,3 @@ https://upcloud.com/community/tutorials/getting-started-upcloud-api/
 
 API documentation:
 https://developers.upcloud.com/1.2/
-
