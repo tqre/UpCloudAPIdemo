@@ -1,0 +1,19 @@
+{
+  "server": {
+    "zone": "fi-hel1",
+    "title": "Debian 10",
+    "hostname": "demodebian",
+    "plan": "1xCPU-1GB",
+    "storage_devices": {
+      "storage_device": [
+        {
+          "action": "clone",
+          "storage": "01000000-0000-4000-8000-000020050100",
+          "title": "DebianDEMO",
+          "size": 25,
+          "tier": "maxiops"
+        }
+      ]
+    }
+  }
+}
