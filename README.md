@@ -1,6 +1,6 @@
 # Python API calls with UpCloud
 
-This is a demonstration how to use API calls programmatically using Python (3.7)
+This is a demonstration how to use API calls programmatically using Python (3.7).
 You'll need an account on UpCloud with API access enabled to use this.
 
 https://upcloud.com/
