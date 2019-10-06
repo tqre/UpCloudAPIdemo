@@ -1,4 +1,4 @@
-# Python API calls with UpCloud
+# Python API calls with UpCloud (DEMO)
 
 This is a demonstration how to use API calls programmatically using Python (3.7).
 You'll need an account on UpCloud with API access enabled to use this.
