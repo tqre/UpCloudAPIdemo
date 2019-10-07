@@ -22,6 +22,10 @@ class Serverlist:
 	def getserverbyid(self,nr):
 		return self.serverlist[nr].uuid
 
+	def getservernamebyuuid(self, uuid):
+		# some dict find command here
+		pass
+
 
 class Server:
 

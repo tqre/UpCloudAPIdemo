@@ -1,6 +1,7 @@
 import http.client
 import UI
 from servers import Serverlist
+from storages import Storagelist
 from base64 import b64encode
 from getpass import getpass
 
@@ -37,8 +38,11 @@ def main():
 	api = APIconnection()
 	api.test_credentials()
 	while True:
-		jsondata = api.do("GET", "/server")
-		serverlist = Serverlist(jsondata)
+		serverdata = api.do("GET", "/server")
+		serverlist = Serverlist(serverdata)
+		storagedata = api.do("GET", "/storage/private")
+		storagelist = Storagelist(storagedata)
+		storagelist.getdetails(api, serverlist)
 		UI.welcome()
 		cmd = input("What do you want to do? ")
 
@@ -54,7 +58,7 @@ def main():
 
 		if cmd == "2":
 			templatefile = open("debian10.json", "r")
-			print(api.do("POST", "/server/", templatefile))
+			print(api.do("POST", "/server", templatefile))
 			templatefile.close()
 
 		if cmd == "3":
@@ -76,6 +80,16 @@ def main():
 			except:
 				print("Something went wrong...")
 				continue
+
+		if cmd == "5":
+			# need to get details on individual storages
+			# to see which server they are attached to
+			storagelist.show()
+
+		if cmd == "6":
+			templatefile = open("storagedemo.json", "r")
+			print(api.do("POST", "/storage", templatefile))
+			templatefile.close()
 
 		if cmd == "?":
 			UI.welcome()

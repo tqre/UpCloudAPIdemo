@@ -1,0 +1,8 @@
+{
+  "storage": {
+    "size": "10",
+    "tier": "maxiops",
+    "title": "Demo Storage",
+    "zone": "fi-hel1"
+    }
+}

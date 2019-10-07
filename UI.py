@@ -5,6 +5,8 @@ def welcome():
 	2 - DEMO - create Debian 10 server
 	3 - delete a server
 	4 - stop a server
+	5 - list storages
+	6 - DEMO - create storage 10GB disk
 	? - list commands
 	0 - exit program	
 	''')
@@ -28,3 +30,5 @@ def server_delete():
 def server_stop():
 	cmd = input("Enter server ID to stop:")
 	return cmd
+
+
