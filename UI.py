@@ -36,8 +36,8 @@ def storage_options():
 	print('''
 	Storage options:
 	1 - delete a storage
-	2 - attach a storage to a server
-	3 - remove storage from a server
+	2 - attach a storage to a server (NOT IMPLEMENTED)
+	3 - remove storage from a server (NOT IMPLEMENTED)
 	''')
 	cmd = input("Storage options:")
 	return cmd
