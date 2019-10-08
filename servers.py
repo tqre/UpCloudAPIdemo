@@ -22,9 +22,11 @@ class Serverlist:
 	def getserverbyid(self,nr):
 		return self.serverlist[nr].uuid
 
-	def getservernamebyuuid(self, uuid):
-		# some dict find command here
-		pass
+	def getserverhostnamebyuuid(self, uuid):
+		for server in self.serverlist:
+			if server.uuid == uuid:
+				return server.hostname
+		return "Not found"
 
 
 class Server:

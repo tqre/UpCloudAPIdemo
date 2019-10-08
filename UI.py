@@ -5,7 +5,7 @@ def welcome():
 	2 - DEMO - create Debian 10 server
 	3 - delete a server
 	4 - stop a server
-	5 - list storages
+	5 - storage options
 	6 - DEMO - create storage 10GB disk
 	? - list commands
 	0 - exit program	
@@ -32,3 +32,12 @@ def server_stop():
 	return cmd
 
 
+def storage_options():
+	print('''
+	Storage options:
+	1 - delete a storage
+	2 - attach a storage to a server
+	3 - remove storage from a server
+	''')
+	cmd = input("Storage options:")
+	return cmd

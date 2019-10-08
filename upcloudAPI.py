@@ -82,9 +82,33 @@ def main():
 				continue
 
 		if cmd == "5":
-			# need to get details on individual storages
-			# to see which server they are attached to
 			storagelist.show()
+			stocmd = UI.storage_options()
+			if stocmd == "1":
+				storageid = input("Enter storage number to be deleted: ")
+				storageuuid = storagelist.getstoragebyid(int(storageid))
+				print(storageuuid)
+				areyousure = input("Storage " + storageid + " is going to be DELETED, sure about that?")
+				if areyousure == "y":
+					print(api.do("DELETE","/storage/" + storageuuid))
+				continue
+			if stocmd == "2":
+				#attach a storage to a server
+				#need to generate json for the storage in question
+				#POST server/<serveruuid>/storage/attach
+				#json stuff in httprequest body
+				serverlist.show()
+				pass
+			if stocmd == "3":
+				#detach a storage
+				#POST server/<serveruuid>/storage/detach
+				#body: json format needs storage address on the server (virtio:[0-7])
+				#that data has to be gathered too from server infos:
+				#server details: [server][storage_devices][storage_device][#number][address]
+				#for first added storage, it is usually virtio:1
+				#via web UI, the storages can't be added on the fly, via API
+				#it is possible for virtio devices
+				pass
 
 		if cmd == "6":
 			templatefile = open("storagedemo.json", "r")

@@ -46,8 +46,7 @@ class Storage:
 	def putdetails(self, serveruuid, serverlist):
 		self.serveruuid = serveruuid
 		# get name by uuid from servers class
-		self.servername = serverlist.getservernamebyuiid(serveruuid)
-
+		self.servername = serverlist.getserverhostnamebyuuid(serveruuid)
 
 	def get(self):
-		return self.id, self.title, self.size, self.state, self.serveruuid
+		return self.id, self.title, self.size, self.state, self.servername
